@@ -1,0 +1,309 @@
+#loading {
+  color: white;
+  /* font-size: clamp(2em, 2vw, 4em); */
+  font-size: 1.875rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.age-fade-out {
+  animation: fadeout 2s;
+  -moz-animation: fadeout 2s;
+  -webkit-animation: fadeout 2s;
+  -o-animation: fadeout 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.text {
+  display: block;
+  /* font-size: clamp(0.5em, 2vw, 4em); */
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+#gallery {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.gallery-hidden {
+  display: none;
+}
+
+.tile {
+  position: absolute;
+  transform: scale(0);
+  opacity: 0.9;
+}
+
+.tile-scale {
+  transform: scale(1);
+  transition: transform 400ms ease;
+}
+
+.tiles-move {
+  opacity: 0;
+  transform: translateY(-1000%);
+  transition: transform 380ms linear, opacity 300ms;
+}
+
+.tile:nth-child(-n + 9) {
+  width: 10vmin;
+  height: 10vmin;
+}
+.tile:nth-child(n + 9):nth-child(-n + 16) {
+  width: 15vmin;
+  height: 15vmin;
+}
+.tile:nth-child(n + 17) {
+  width: 25vmin;
+  height: 25vmin;
+}
+
+.tile:nth-child(1) {
+  top: 1%;
+  left: 34%;
+}
+
+.tile:nth-child(2) {
+  top: 15%;
+  left: 22%;
+}
+
+.tile:nth-child(3) {
+  top: 12%;
+  right: 1%;
+}
+
+.tile:nth-child(4) {
+  top: 34%;
+  left: 60%;
+}
+
+.tile:nth-child(5) {
+  top: 56%;
+  left: 50%;
+}
+
+.tile:nth-child(6) {
+  top: 60%;
+  left: 4%;
+}
+
+.tile:nth-child(7) {
+  top: 92%;
+  left: 56%;
+}
+
+.tile:nth-child(8) {
+  top: 90%;
+  right: 3%;
+}
+
+.tile:nth-child(9) {
+  top: 8%;
+  left: 2%;
+}
+
+.tile:nth-child(10) {
+  top: 10%;
+  left: 45%;
+}
+
+.tile:nth-child(11) {
+  top: 26%;
+  left: 78%;
+}
+
+.tile:nth-child(12) {
+  top: 33%;
+  left: 8%;
+}
+
+.tile:nth-child(13) {
+  top: 45%;
+  right: 0%;
+}
+
+.tile:nth-child(14) {
+  top: 85%;
+  left: -3%;
+}
+
+.tile:nth-child(15) {
+  top: 85%;
+  left: 40%;
+}
+
+.tile:nth-child(16) {
+  top: 90%;
+  left: 70%;
+}
+
+.tile:nth-child(17) {
+  top: -8%;
+  left: 60%;
+}
+
+.tile:nth-child(18) {
+  top: 33%;
+  left: 28%;
+}
+
+.tile:nth-child(19) {
+  top: 50%;
+  left: 66%;
+}
+
+.tile:nth-child(20) {
+  top: 74%;
+  left: 14%;
+}
+
+/* 스크롤스냅처리 시작 */
+#scrollWrap {
+  display: none;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#scrollWrap.scroll-wrap-show {
+  display: block !important;
+}
+
+.scroll-page {
+  scroll-snap-align: start;
+}
+/* 스크롤스냅처리 끝 */
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+  background-size: 100%;
+  animation: pan-image 15s linear infinite;
+}
+
+@keyframes pan-image {
+  0% {
+    background-position: 36% 42%;
+    background-size: 100%;
+  }
+
+  20% {
+    background-position: 30% 35%;
+    background-size: 100%;
+  }
+
+  20.0001% {
+    /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 150%;
+  }
+
+  40% {
+    background-position: 49% 81%;
+    background-size: 150%;
+  }
+
+  40.0001% {
+    /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 110%;
+  }
+
+  60% {
+    background-position: 84% 33%;
+    background-size: 110%;
+  }
+
+  60.0001% {
+    /* -- View 4 -- */
+    background-position: 0% 0%;
+    background-size: 110%;
+  }
+
+  80% {
+    background-position: 15% 4%;
+    background-size: 110%;
+  }
+
+  80.0001% {
+    /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 110%;
+  }
+
+  100% {
+    background-position: 72% 14%;
+    background-size: 110%;
+  }
+}
+
+#blackFilter {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(10, 10, 10, 0.7);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+#mainTitle {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
+
+#scrollDown {
+  position: absolute;
+  justify-content: center;
+  bottom: 3.25rem;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0, 0);
+  cursor: pointer;
+  background-color: rgb(10, 10, 10, 0);
+  color: rgb(255, 255, 255, 0.7);
+  font-size: 1.25rem;
+  font-weight: 300;
+  /* visibility: hidden; */
+}
+
+.main-show {
+  display: block !important;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.d-none {
+  display: none;
+}
